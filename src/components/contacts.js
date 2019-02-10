@@ -1,6 +1,13 @@
 var Contacts = React.createClass({
   propTypes: {
-    items: React.PropTypes.array.isRequired
+    items: React.PropTypes.arrayOf(
+      React.PropTypes.shape({
+        firstName: React.PropTypes.string.isRequired,
+        lastName: React.PropTypes.string.isRequired,
+        email: React.PropTypes.string.isRequired,
+        src: React.PropTypes.string
+      })
+    ).isRequired
   },
   render: function() {
     var contacts = this.props.items.map(function(contact) {

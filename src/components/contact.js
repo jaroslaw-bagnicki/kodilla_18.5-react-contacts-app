@@ -1,6 +1,11 @@
 var Contact = React.createClass({
   propTypes: {
-    item: React.PropTypes.object.isRequired
+    item: React.PropTypes.shape({
+      firstName: React.PropTypes.string.isRequired,
+      lastName: React.PropTypes.string.isRequired,
+      email: React.PropTypes.string.isRequired,
+      src: React.PropTypes.string
+    }).isRequired
   },
   render: function() {
     return (
