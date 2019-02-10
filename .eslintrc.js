@@ -22,6 +22,8 @@ module.exports = {
         ],
         "no-console": "warn",
         "no-unused-vars": "warn",
+        "react/no-deprecated": "off",
+        "react/display-name": "off"
     },
     "settings": {
       "react": {
@@ -38,6 +40,10 @@ module.exports = {
     },
     "globals": {
       "React": true,
-      "ReactDOM": true
+      "ReactDOM": true,
+      "App": true,
+      "Contact": true,
+      "Contacts": true,
+      "ContactForm": true
     }
 };
