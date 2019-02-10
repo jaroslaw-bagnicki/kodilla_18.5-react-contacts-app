@@ -4,7 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "browser-sync start --server src --files src"
+    "prestart": "run-s prestart:**",
+    "prestart:clean": "rm -r dist & mkdir dist -p",
+    "prestart:copy": "run-s copy:**",
+    "start": "run-p start:**",
+    "start:html": "onchange 'src/index.html' -- npm run copy:html",
+    "start:css": "onchange 'src/style.css' -- npm run copy:css",
+    "start:js": "babel src --watch --out-file dist/index.js --source-maps",
+    "start:serve": "browser-sync start --server dist --files dist",
+    "watch:assets": "onchange 'src/assets/**/*' -- npm run copy:assets",
+    "copy:html": "cp src/index.html dist/index.html",
+    "copy:css": "cp src/style.css dist/style.css",
+    "copy:assets": "cp -r src/assets dist/assets"
   },
   "repository": {
     "type": "git",
@@ -12,10 +23,15 @@
   },
   "author": "Jarosław Bagnicki <jarek@bagnicki.net>",
   "license": "Unlicense",
-  "homepage": "https://github.com/jaroslaw-bagnicki/kodilla_18.5-react-contacts-app.gits#readme",
+  "homepage": "https://github.com/jaroslaw-bagnicki/kodilla_18.5-react-contacts-app#readme",
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-react": "^7.0.0",
     "browser-sync": "^2.26.3",
     "eslint": "^5.13.0",
-    "eslint-plugin-react": "^7.12.4"
+    "eslint-plugin-react": "^7.12.4",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^5.2.0"
   }
 }
