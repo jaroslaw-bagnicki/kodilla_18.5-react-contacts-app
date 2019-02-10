@@ -1,0 +1,146 @@
+/* Box model setup to border-box */
+html {
+  box-sizing: border-box;
+}
+
+*, 
+*:before, 
+*:after {
+  box-sizing: inherit;
+}
+
+/* Button & input reset */
+button,
+input {
+  margin:0;
+	border:0;
+	padding:0;
+	display:inline-block;
+	vertical-align:middle;
+	white-space:normal;
+	background:none;
+	line-height:normal;
+	font-size: 100%;
+	font-family: inherit;
+	color: inherit;
+}
+
+input:focus,
+button:focus,
+select:focus {
+	outline: 0;
+}
+
+/* main styles */
+
+body {
+  background-color: #bfbfbf;
+  color: #2b3335;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+}
+
+.app {
+  background-color: white;
+  max-width: 500px;
+  margin: 15px auto;
+  border-radius: 5px;
+  padding: 12px;
+}
+
+.contactForm {
+  border: 1px solid hsl(192, 10%, 50%);
+  margin-bottom: 12px;
+  padding: 12px;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contactForm .formGroup {
+  display: inline-flex;
+  flex-direction: column;
+  margin: 8px;
+}
+
+.contactForm .formGroup label {
+  font-size: 14px;
+}
+
+.contactForm .formGroup input {
+  padding: 4px 10px;
+  background-color: hsl(0, 0%, 98%);
+  border-bottom: 1px solid hsl(192, 10%, 85%);
+  transition: .3s;
+}
+
+.contactForm input:hover,
+.contactForm input:focus {
+  background-color: hsl(0, 0%, 95%);
+}
+
+.contactForm .formSubmitButton {
+  margin: 8px;
+  padding: 8px 12px;
+  background-color: hsl(207, 37%, 85%);
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: .3s;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+.contactForm .formSubmitButton:hover {
+  background-color: hsl(207, 37%, 75%);
+}
+
+.contactItem {
+  padding: 8px;
+  background-color: hsl(0, 0%, 90%);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  transition: .3s;
+}
+
+.contactItem:hover {
+  background-color: hsl(0, 0%, 87%);
+}
+
+
+.contactItem:not(:last-of-type) {
+  margin-bottom: 8px;
+}
+
+.contactImage {
+  height: 100px;
+  width: 100px;
+  margin: 17px;
+  border-radius: 5px;
+  object-fit: contain;
+}
+
+.contactDetails {
+  margin: 17px 8px;
+}
+
+.contactLabel {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.contactFirstName {
+  font-weight: 400;
+}
+
+.contactEmail {
+  color: #708489;
+  text-decoration: none;
+}
+
+.contactEmail:hover {
+  text-decoration: underline;
+}
